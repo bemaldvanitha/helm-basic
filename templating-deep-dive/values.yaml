@@ -13,3 +13,9 @@ image:
 # nginx container port
 containerPorts:
   http: 80
+
+# Service type and exposed port and enable status
+service:
+  enable: true
+  type: ClusterIP
+  port: 80
