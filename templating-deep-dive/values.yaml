@@ -1,3 +1,6 @@
+# custom name allow to set custom resource name
+customName: ''
+
 # Replica count
 # Image, both name and tag
 # Service type and port

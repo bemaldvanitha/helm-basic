@@ -1,5 +1,6 @@
 {{- define "templating-deep-dive.fullname" -}}
-{{- printf "%s-%s" .Release.Name .Chart.Name | trunc 63 | trimSuffix "-"  -}}
+{{ $fullName := printf "%s-%s" .Release.Name .Chart.Name }}
+{{- $fullName | trunc 63 | trimSuffix "-"  -}}
 {{- end -}}
 
 {{- define "templating-deep-dive.selectorLabels" -}}
