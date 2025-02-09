@@ -5,4 +5,5 @@
 {{- define "templating-deep-dive.selectorLabels" -}}
 app: {{ .Chart.Name }}
 release: {{ .Release.Name }}
+managedBy: "helm"
 {{- end -}}
