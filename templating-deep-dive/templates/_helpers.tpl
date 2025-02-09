@@ -1,7 +1,7 @@
 {{- define "templating-deep-dive.fullname" -}}
 {{- $defaultName := printf "%s-%s" .Release.Name .Chart.Name }}
 
-# {{-/* if .Values.customName }}
+# {{/*- if .Values.customName }}
 # {{- $fullName = .Values.customName }}
 # {{- end */}}
 
