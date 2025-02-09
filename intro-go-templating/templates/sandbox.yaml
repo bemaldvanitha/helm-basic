@@ -3,7 +3,7 @@
 
 {{- /* <function name> <arg1> <arg2> ... */}}
 
-test: {{ lower replace (" " "-" .Values.test) }}
+test: {{ replace (" " "-" .Values.test) }}
 labels:
   {{- /* app label from release */}}
   app: {{ .Release.Name }}
