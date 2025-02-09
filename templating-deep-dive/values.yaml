@@ -3,3 +3,15 @@ environment: production
 
 # and value1 value2
 # list 1 2 3 -> list [1, 2, 3]
+
+# Replica count
+# Image, both name and tag
+# Service type and port
+
+# replica count - number of replica count
+replicaCount: 1
+
+# Setting for nginx image
+image:
+  name: nginx
+  tag: "1.27.0"
