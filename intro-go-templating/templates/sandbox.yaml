@@ -1,7 +1,9 @@
 # I am yaml comment
 {{- /* i am a go comment */}}
 
-test: {{ .Values.test }}
+{{- /* <function name> <arg1> <arg2> ... */}}
+
+test: {{ lower .Values.test }}
 labels:
   {{- /* app label from release */}}
   app: {{ .Release.Name }}
