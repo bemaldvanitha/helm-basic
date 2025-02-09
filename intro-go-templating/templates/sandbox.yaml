@@ -4,9 +4,17 @@
 {{- /* <function name> <arg1> <arg2> ... */}}
 
 test: {{ replace " " "-" .Values.test | lower }}
-test2: {{ lower .Values.test | replace " " "-"  }}
 labels:
   {{- /* app label from release */}}
   app: {{ .Release.Name }}
   {{- /* app label from chart */}}
   chart: {{ .Chart.Name }}
+  {{ if eq .Values.environment "production" }}
+  environment: production
+  build: stable
+  publish-ingress: true
+  {{ else }}
+  environment: dev
+  build: alpha
+  publish-ingress: false
+  {{end}}
