@@ -1,11 +1,11 @@
 {{- define "templating-deep-dive.fullname" -}}
-{{- $fullName := printf "%s-%s" .Release.Name .Chart.Name }}
+{{- $defaultName := printf "%s-%s" .Release.Name .Chart.Name }}
 
-# {{- if .Values.customName }}
+# {{-/* if .Values.customName }}
 # {{- $fullName = .Values.customName }}
-# {{- end}}
+# {{- end */}}
 
-{{- $fullName | trunc 63 | trimSuffix "-"  -}}
+{{- .Values.customName | default $defaultName | trunc 63 | trimSuffix "-"  -}}
 {{- end -}}
 
 {{- define "templating-deep-dive.selectorLabels" -}}
