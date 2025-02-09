@@ -2,3 +2,8 @@
 {{/* i am a go comment */}}
 
 test: {{ .Values.test }}
+labels:
+  {{/* app label from release */}}
+  app: {{ .Release.Name }}
+  {{/* app label from chart */}}
+  chart: {{ .Chart.Name }}
