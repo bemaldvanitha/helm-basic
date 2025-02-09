@@ -5,7 +5,7 @@ metadata:
   labels:
    {{- include "templating-deep-dive.selectorLabels" . | nindent 4 }}
 spec:
-  replicas: {{- if eq .Values.environment "production" -}} 5 {{- else -}} 2 {{ end }}
+  replicas: {{ if eq .Values.environment "production" -}} 5 {{ else -}} 2 {{ end }}
   selector:
     matchLabels:
     {{- include "templating-deep-dive.selectorLabels" . | nindent 6 }}
