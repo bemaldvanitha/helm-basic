@@ -1,5 +1,5 @@
 # custom name allow to set custom resource name
-customName: ''
+customName: 'my-custom-release'
 
 # Replica count
 # Image, both name and tag
