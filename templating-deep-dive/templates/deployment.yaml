@@ -2,9 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "templating-deep-dive.fullname" . }}
-  labels:
-    app: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
+  labels: {{ include "templating-deep-dive.selectorLabels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
