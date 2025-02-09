@@ -1,20 +1,2 @@
-# I am yaml comment
-{{- /* i am a go comment */}}
-
-{{- /* <function name> <arg1> <arg2> ... */}}
-
-test: {{ replace " " "-" .Values.test | lower }}
-labels:
-  {{- /* app label from release */}}
-  app: {{ .Release.Name }}
-  {{- /* app label from chart */}}
-  chart: {{ .Chart.Name }}
-  {{- if eq .Values.environment "production" }}
-  environment: production
-  build: stable
-  publish-ingress: true
-  {{- else }}
-  environment: dev
-  build: alpha
-  publish-ingress: false
-  {{- end}}
+list:
+{{ list 1 2 3 | toYaml }}
