@@ -9,3 +9,12 @@ replicaCount: 1
 image:
   name: nginx
   tag: "1.27.0"
+
+# nginx container port
+containerPorts:
+  http: 80
+
+# Service type and exposed port
+service:
+  type: ClusterIP
+  port: 80

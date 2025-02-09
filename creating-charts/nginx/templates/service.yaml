@@ -9,6 +9,6 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.containerPorts.http }}
+  type: {{ .Values.service.type }}
