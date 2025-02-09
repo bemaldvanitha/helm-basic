@@ -1,9 +1,9 @@
 # I am yaml comment
-{{/* i am a go comment */}}
+{{- /* i am a go comment */}}
 
 test: {{ .Values.test }}
 labels:
-  {{/* app label from release */}}
+  {{- /* app label from release */}}
   app: {{ .Release.Name }}
-  {{/* app label from chart */}}
+  {{- /* app label from chart */}}
   chart: {{ .Chart.Name }}
