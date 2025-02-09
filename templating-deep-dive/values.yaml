@@ -1,9 +1,3 @@
-test: I am a string
-environment: production
-
-# and value1 value2
-# list 1 2 3 -> list [1, 2, 3]
-
 # Replica count
 # Image, both name and tag
 # Service type and port
@@ -15,3 +9,7 @@ replicaCount: 1
 image:
   name: nginx
   tag: "1.27.0"
+
+# nginx container port
+containerPorts:
+  http: 80
