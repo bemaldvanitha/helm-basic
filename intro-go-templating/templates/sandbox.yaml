@@ -9,12 +9,12 @@ labels:
   app: {{ .Release.Name }}
   {{- /* app label from chart */}}
   chart: {{ .Chart.Name }}
-  {{ if eq .Values.environment "production" }}
+  {{- if eq .Values.environment "production" }}
   environment: production
   build: stable
   publish-ingress: true
-  {{ else }}
+  {{- else }}
   environment: dev
   build: alpha
   publish-ingress: false
-  {{end}}
+  {{- end}}
