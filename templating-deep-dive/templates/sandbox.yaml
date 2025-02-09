@@ -1,1 +1,1 @@
-list: {{ toYaml(list 1 2 3) | nindent 2 }}
+list: {{ toYaml (list 1 2 3) | nindent 2 }}
