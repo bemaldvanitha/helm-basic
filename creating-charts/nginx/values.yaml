@@ -4,3 +4,8 @@
 
 # replica count - number of replica count
 replicaCount: 1
+
+# Setting for nginx image
+image:
+  name: nginx
+  tag: "1.27.0"
