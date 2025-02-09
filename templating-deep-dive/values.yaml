@@ -5,6 +5,8 @@
 # replica count - number of replica count
 replicaCount: 1
 
+environment: production
+
 # Setting for nginx image
 image:
   name: nginx
