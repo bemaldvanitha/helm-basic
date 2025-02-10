@@ -13,6 +13,12 @@ image:
   name: nginx
   tag: "1.27.0"
 
+# security context run as user and fs group
+securityContext:
+  enabled: true
+  runAsUser: 1000
+  fsGroup: 2000
+
 # nginx container port
 containerPorts:
   http: 80
