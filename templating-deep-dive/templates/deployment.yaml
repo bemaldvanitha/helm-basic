@@ -17,10 +17,12 @@ spec:
       containers:
         - name: nginx
           image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
-          {{- if .Values.securityContext.enabled }}
+          {{- with .Values.securityContext }}
+          {{- if .enabled }}
           securityContext:
-            runAsUser: {{- .Values.securityContext.runAsUser }}
-            fsGroup: {{- .Values.securityContext.fsGroup }}
+            runAsUser: {{- .runAsUser }}
+            fsGroup: {{- .fsGroup }}
+          {{- end }}
           {{- end }}
           {{- if len .Values.services }}
           ports:
