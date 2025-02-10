@@ -19,7 +19,9 @@ containerPorts:
 
 # Service list of type and exposed port
 services:
-  - type: ClusterIP
+  svc1:
+    type: ClusterIP
     port: 80
-  - type: NodePort
+  scv2:
+    type: NodePort
     port: 30007
