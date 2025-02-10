@@ -17,8 +17,7 @@ image:
 containerPorts:
   http: 80
 
-# Service type and exposed port and enable status
-service:
-  enable: true
-  type: ClusterIP
-  port: 80
+# Service list of type and exposed port
+services:
+  - type: ClusterIP
+    port: 80
