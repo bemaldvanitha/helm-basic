@@ -1,4 +1,5 @@
 {{- range $idx, $svc := .Values.services | default list }}
+---
 apiVersion: v1
 kind: Service
 metadata:
