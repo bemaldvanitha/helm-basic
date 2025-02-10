@@ -1,6 +1,7 @@
 {{- if and .Values.securityContext .Values.securityContext.enabled }}
 {{- $_ := required "securityContext.runAsUser is required and enable is true" .Values.securityContext.runAsUser -}}
 {{- $_ = required "securityContext.fsGroup is required and enable is true" .Values.securityContext.fsGroup -}}
+{{- fail "i always fail" }}
 {{- end}}
 
 apiVersion: apps/v1
