@@ -1,4 +1,5 @@
 {{- range $key, $svc := .Values.services | default dict }}
+{{ include "templating-deep-dive.validators.service" $svc }}
 ---
 # the value of the dot : {{ . }}
 
@@ -13,7 +14,7 @@ spec:
     {{- include "templating-deep-dive.selectorLabels" $ | nindent 4 }}
   ports:
     - protocol: TCP
-      port: {{ include "templating-deep-dive.validators.Port" $svc.port }}
+      port: {{ $svc.port }}
       targetPort: {{ $.Values.containerPorts.http }}
   type: {{ $svc.type }}
 {{- end }}
