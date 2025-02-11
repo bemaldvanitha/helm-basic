@@ -16,7 +16,7 @@ image:
 # security context run as user and fs group
 securityContext:
   enabled: true
-  runAsUser: 0
+  runAsUser: 1000
   fsGroup: 2000
 
 # nginx container port
