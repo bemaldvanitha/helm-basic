@@ -1,7 +1,7 @@
 {{- if and .Values.securityContext .Values.securityContext.enabled }}
 {{- $_ := required "securityContext.runAsUser is required and enable is true" .Values.securityContext.runAsUser -}}
 {{- $_ = required "securityContext.fsGroup is required and enable is true" .Values.securityContext.fsGroup -}}
-{{- if eq .Values.securityContext.runAsUser 0 -}}
+{{- if eq int(.Values.securityContext.runAsUser) 0 -}}
   {{- fail "Container can not be run as root user" }}
 {{- end -}}
 {{- end}}
