@@ -19,4 +19,8 @@ managedBy: "helm"
     {{- if or (lt $sanitizedPort 1) (gt $sanitizedPort 65535) -}}
         {{- fail "error: port should be between 1 - 65535" -}}
     {{- end -}}
+{{- $allowedSvcTypes := list "ClusterIP" "NodePort" -}}
+    {{- if not (has .type $allowedSvcTypes) -}}
+        {{- fail "error: allowed svc types are nort port or cluster ip" -}}
+    {{- end -}}
 {{- end -}}
