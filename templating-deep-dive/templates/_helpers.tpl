@@ -13,3 +13,11 @@ app: {{ .Chart.Name }}
 release: {{ .Release.Name }}
 managedBy: "helm"
 {{- end -}}
+
+{{- define "templating-deep-dive.validators.Port" -}}
+{{- $sanitizedPort := int . -}}
+    {{- if or (lt $sanitizedPort 1) (gt $sanitizedPort 65535) -}}
+        {{- fail "error: port should be between 1 - 65535" -}}
+    {{- end -}}
+    {{- . }}
+{{- end -}}

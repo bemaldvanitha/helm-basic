@@ -13,7 +13,7 @@ spec:
     {{- include "templating-deep-dive.selectorLabels" $ | nindent 4 }}
   ports:
     - protocol: TCP
-      port: {{ $svc.port }}
+      port: {{ include "templating-deep-dive.validators.Port" $svc.port }}
       targetPort: {{ $.Values.containerPorts.http }}
   type: {{ $svc.type }}
 {{- end }}
