@@ -29,3 +29,6 @@ dependencies:
     repository: "https://charts.bitnami.com/bitnami"
   - name: demo-subchart
     version: 0.1.0
+
+global:
+  defaultStorageClass: "my-custom-storage-class"
