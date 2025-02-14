@@ -120,8 +120,9 @@ tolerations: []
 
 affinity: {}
 
-demo-subchart:
-  customValue: 'hello from config store'
-
 postgresql:
   enable: true
+  auth:
+    username: config_store_user
+    database: config_store_db
+    existingSecret: postgres-creds
