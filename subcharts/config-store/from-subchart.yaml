@@ -1,1 +1,1 @@
-# test value from subcharts: {{ include demo-subchart.fullname}}
+# test value from subcharts: {{ include demo-subchart.fullname . }}
