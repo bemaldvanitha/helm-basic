@@ -122,3 +122,6 @@ affinity: {}
 
 demo-subchart:
   customValue: 'hello from config store'
+
+postgresql:
+  enable: true
