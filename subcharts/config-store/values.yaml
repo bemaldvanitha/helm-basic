@@ -126,3 +126,6 @@ postgresql:
     username: config_store_user
     database: config_store_db
     existingSecret: postgres-creds
+    secretKeys:
+      userPasswordKey: password
+    fullnameOverride: postgresql-db
