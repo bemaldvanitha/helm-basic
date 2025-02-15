@@ -4,4 +4,4 @@ metadata:
   name: {{ include "accessing-files.fullname" }}
 data:
   application.properties: |-
-{{ .Files.Get "files/application.properties" | nindent 4 }}
+    {{- .Files.Get "files/application.properties" | nindent 4 }}
