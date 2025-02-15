@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "helm-hooks.labels" . | nindent 4 }}
   annotations:
-    "helm.sh/hook": pre-upgrade,pre-delete,pre-rollback
+    "helm.sh/hook": pre-upgrade
     "helm.sh/hook-weight": "0"
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
 spec:
